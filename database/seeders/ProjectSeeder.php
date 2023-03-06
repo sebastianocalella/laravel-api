@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\User;
 use Faker\Generator as Faker;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +24,7 @@ class ProjectSeeder extends Seeder
             $newProject = new Project();
             $newProject->type_id = Type::inRandomOrder()->first()->id;
             $newProject->author = $faker->name();
+            $newProject->user_id = User::inRandomOrder()->first()->id;
             $newProject->title = $faker->unique()->sentence(2);
             $newProject->slug = Str::slug($newProject->title);
             $newProject->modification_date = $faker->dateTimeThisYear();

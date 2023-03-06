@@ -26,6 +26,10 @@ class Project extends Model
         return $this->belongsTo(Type::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     /**
      * Get the route key for the model
      * 
