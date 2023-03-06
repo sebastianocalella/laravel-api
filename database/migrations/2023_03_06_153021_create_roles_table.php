@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('level')->unsigned()->unique();
+            $table->smallInteger('level')->unsigned()->unique();
             $table->string('name', 80);
             $table->timestamps();
         });

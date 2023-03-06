@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             TecnologySeeder::class,
             UserSeeder::class,
             UserDetailSeeder::class,
+            RoleSeeder::class,
             ProjectSeeder::class,
             ProjectTecnologySeeder::class
         ]);
