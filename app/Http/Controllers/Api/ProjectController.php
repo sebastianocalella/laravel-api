@@ -12,4 +12,12 @@ class ProjectController extends Controller
         $projects = Project::with('type','tecnologies')->orderBy('modification_date', 'DESC')->paginate(6);
         return response()->json(['success' => true, 'results' => $projects]);
     }
+
+    public function show(Project $project){
+        $project = Project::with('type', 'tecnologies')->findOrFail($project->id);
+        return response()->json([
+            'success' => true,
+            'results' => $project
+        ]);
+    }
 }
