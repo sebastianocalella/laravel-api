@@ -54,10 +54,10 @@ class RoleSeeder extends Seeder
             ],
         ];
         foreach ($roles as $role) {
-            $role = new Role();
-            $role->level = $role['level'];
-            $role->name = $role['name'];
-            $role->save();
+            $newRole = new Role();
+            $newRole->level = $role['level'];
+            $newRole->name = $role['name'];
+            $newRole->save();
         }
     }
 }
